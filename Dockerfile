@@ -37,7 +37,7 @@ RUN set -xe \
 RUN set -xe \
     && apk add --no-cache nginx redis nodejs nodejs-npm supervisor git bash openssh-client rsync mysql-client \
     && npm config set registry http://registry.npm.taobao.org/ \
-    && composer install -o \
+    && php -d memory_limit=-1 /usr/local/bin/composer install -o \
     && npm install --production \
     && chmod -R 777 storage \
     && chmod -R 777 bootstrap/cache \
