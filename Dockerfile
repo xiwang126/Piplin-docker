@@ -35,7 +35,7 @@ RUN set -xe \
 
 # 安装项目依赖
 RUN set -xe \
-    && apk add --no-cache nginx redis nodejs nodejs-npm supervisor git bash openssh-client rsync \
+    && apk add --no-cache nginx redis nodejs nodejs-npm supervisor git bash openssh-client rsync mysql-client \
     && npm config set registry http://registry.npm.taobao.org/ \
     && composer install -o \
     && npm install --production \
